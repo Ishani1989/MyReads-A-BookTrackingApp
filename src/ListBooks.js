@@ -18,9 +18,6 @@ class ListBooks extends Component{
         this.setState({
             query : query.trim()
         })
-        BooksAPI.search(this.state.query, this.state.maxResults).then((books) => {
-            this.setState({books: books})
-        })
     }
 
     clearQuery =()=>{
@@ -33,7 +30,15 @@ class ListBooks extends Component{
         const {query} = this.state.query
         const {maxResults} = 5
         
-    
+        if(this.state.query){
+            
+            BooksAPI.search(this.state.query, this.state.maxResults).then((books) => {
+                this.setState({books: books})
+            })
+        }
+        else{
+            this.state.books = []
+        }
         return (
             <div className="search-books">
                 <div className="search-books-bar">
