@@ -16,7 +16,8 @@ class ListBooks extends Component{
 
     updateQuery = (query)=>{
         this.setState({
-            query : query.trim()
+            query : query.trim(),
+            maxResults:5
         })
     }
 
@@ -48,17 +49,30 @@ class ListBooks extends Component{
                 </div>
                 </div>
             <div className="search-books-results">
-              <ol className="books-grid">
-              {this.state.books.map((book)=>(
-                <li key={book.id}>
-                    <div>
-                        <p>{book.title}</p>
-                        <p>{book.author}</p>
+                <div className="list-books">
+                    <div className="list-books-title">
+                        <h1>Your Search:</h1>
                     </div>
-                </li>))
-              }
+                    <div className="list-books-content">
+                    <div>
+                    <div className="bookshelf">
+                    <h2 className="bookshelf-title">Currently Reading</h2>
+                    <div className="bookshelf-books">
+                    <ol className="books-grid">
+                    {this.state.books.map((book)=>(
+                        <li key={book.id}>
+                        <div className="book-cover" style={{ width: 128, height: 188, backgroundImage: `url(${book.imageLinks.thumbnail})` }}></div>
+                                <p>{book.title}</p>
+                                <p>{book.authors}</p>
+                            
+                        </li>))}
                 </ol>
             </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
           </div>
         )
     }
