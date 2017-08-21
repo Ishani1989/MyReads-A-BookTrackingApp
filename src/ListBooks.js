@@ -19,6 +19,13 @@ class ListBooks extends Component{
             query : query.trim(),
             maxResults:5
         })
+        if(query){
+        BooksAPI.search(this.state.query, this.state.maxResults).then((books) => {
+            this.setState({books: books})
+        })}
+        else{
+            this.setState({books: []})
+        }
     }
 
     clearQuery =()=>{
@@ -28,24 +35,14 @@ class ListBooks extends Component{
     }
 
     render() {
-        const {query} = this.state.query
-        const {maxResults} = 5
-        
-        if(this.state.query){
-            
-            BooksAPI.search(this.state.query, this.state.maxResults).then((books) => {
-                this.setState({books: books})
-            })
-        }
-        else{
-            this.state.books = []
-        }
+        const {query}=this.state.query        
+    
         return (
             <div className="search-books">
                 <div className="search-books-bar">
                 <div className="search-books-input-wrapper">
-                    <input type="text" placeholder="Search by title or author" value = {query}
-                        onChange ={(event) => this.updateQuery(event.target.value)}/>
+                    <input type="text" placeholder="Search by title or author" value={query}
+                        onChange={(event) => this.updateQuery(event.target.value)}/>
                 </div>
                 </div>
             <div className="search-books-results">
@@ -53,27 +50,27 @@ class ListBooks extends Component{
                     <div className="list-books-title">
                         <h1>Your Search:</h1>
                     </div>
-                    <div className="list-books-content">
-                    <div>
-                    <div className="bookshelf">
-                    <h2 className="bookshelf-title">Currently Reading</h2>
-                    <div className="bookshelf-books">
+                    {this.state.books ? (
                     <ol className="books-grid">
                     {this.state.books.map((book)=>(
                         <li key={book.id}>
-                        <div className="book-cover" style={{ width: 128, height: 188, backgroundImage: `url(${book.imageLinks.thumbnail})` }}></div>
+                        {'imageLinks' in book ? (<div className='book-cover' style={{
+                            width: 128, height: 188, backgroundImage: `url(${book.imageLinks.thumbnail})`
+                             }}/>) : (<div className='book-cover' style={{
+                            width: 128, height: 188, backgroundImage: `url("./icons/noimage.jpg")`
+                             }}/>)
+                        
+                        }
                                 <p>{book.title}</p>
-                                <p>{book.authors}</p>
                             
                         </li>))}
-                </ol>
+                </ol>):(
+                    <div><h4>No results to show</h4></div>
+                )}
             </div>
           </div>
           </div>
-          </div>
-          </div>
-          </div>
-          </div>
+         
         )
     }
 
