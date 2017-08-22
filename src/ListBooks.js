@@ -45,31 +45,42 @@ class ListBooks extends Component{
                         onChange={(event) => this.updateQuery(event.target.value)}/>
                 </div>
                 </div>
-            <div className="search-books-results">
-                <div className="list-books">
-                    <div className="list-books-title">
-                        <h1>Your Search:</h1>
+                <div className="search-books-results">
+                    <div className="list-books">
+                        <div className="list-books-title">
+                            <h1>Your Search:</h1>
+                        </div>
+                        <div>
+                            {this.state.books ? (
+                                <ol className="books-grid">
+                                {this.state.books.map((book)=>(
+                                    <li key={book.id}>
+                                    {'imageLinks' in book ? (<div className='book-cover' style={{
+                                    width: 128, height: 188, backgroundImage: `url(${book.imageLinks.thumbnail})`
+                                    }}/>
+                                    ) : (<div className='book-cover' style={{
+                                             width: 128, height: 188, backgroundImage: `url("./icons/noimage.jpg")`
+                                            }}/>)
+                                    }
+                                        <div >
+                                            <select>
+                                            <option value="none" disabled>Move to...</option>
+                                            <option value="currentlyReading">Currently Reading</option>
+                                            <option value="wantToRead">Want to Read</option>
+                                            <option value="read">Read</option>
+                                            <option value="none">None</option>
+                                            </select>
+                                        </div>
+                                        <p>{book.title}</p>
+
+                                    </li>))}
+                                </ol>):(
+                                <div><h4>No results to show</h4></div>
+                            )}
+                        </div>
                     </div>
-                    {this.state.books ? (
-                    <ol className="books-grid">
-                    {this.state.books.map((book)=>(
-                        <li key={book.id}>
-                        {'imageLinks' in book ? (<div className='book-cover' style={{
-                            width: 128, height: 188, backgroundImage: `url(${book.imageLinks.thumbnail})`
-                             }}/>) : (<div className='book-cover' style={{
-                            width: 128, height: 188, backgroundImage: `url("./icons/noimage.jpg")`
-                             }}/>)
-                        
-                        }
-                                <p>{book.title}</p>
-                            
-                        </li>))}
-                </ol>):(
-                    <div><h4>No results to show</h4></div>
-                )}
+                </div>
             </div>
-          </div>
-          </div>
          
         )
     }
