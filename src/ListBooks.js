@@ -35,11 +35,13 @@ class ListBooks extends Component{
     }
 
     render() {
-        const {query}=this.state.query        
+        const {query}=this.state.query
+        let closeSearch =   this.props.closeSearch;        
     
         return (
             <div className="search-books">
                 <div className="search-books-bar">
+                <a className="close-search" onClick={this.props.onNavigate}>Close</a>
                 <div className="search-books-input-wrapper">
                     <input type="text" placeholder="Search by title or author" value={query}
                         onChange={(event) => this.updateQuery(event.target.value)}/>
