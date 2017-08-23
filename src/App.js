@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import ListBooks from './ListBooks'
 import './App.css'
 
@@ -34,7 +35,7 @@ class BooksApp extends React.Component {
     return (
       
       <div className="app">
-        {this.state.showSearchPage ? (<ListBooks onNavigate={this.closeSearch}/>) : (
+        <Route exact path="/" render ={()=>(
           <div className="list-books">
           <div className="list-books-title">
             <h1>MyReads</h1>
@@ -194,7 +195,8 @@ class BooksApp extends React.Component {
             <Link to="/search">Add a book</Link>
           </div>
         </div>
-      )}
+        )}/>
+        <Route path ="/search" render ={()=>(<ListBooks onNavigate={this.closeSearch}/>)}/>          
     </div>
   )
 }
