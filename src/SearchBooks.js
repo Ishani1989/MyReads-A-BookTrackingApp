@@ -11,7 +11,6 @@ class SearchBooks extends Component{
 
     state = {
         query : "",
-        maxResults : 5,
         books : []
     }
 
