@@ -6,16 +6,16 @@ class ListBooks extends Component{
 
 
     render(){
+      const books = this.props.books
         return (
 
         <div className="list-books">
         <div className="list-books-title">
           <h1>MyReads</h1>
-          {JSON.stringify(this.props.books)}
         </div>
-        <Shelf title = "Currently Reading" books = {this.props.books}/>
-        <Shelf title = "Want To Read" books = {this.props.books}/>
-        <Shelf title = "Read" books = {this.props.books}/>
+        <Shelf title = "Currently Reading" books={books.filter((book) => book.shelf === "currentlyReading")}/>
+        <Shelf title = "Want To Read" books={books.filter((book) => book.shelf === "wantToRead")}/>
+        <Shelf title = "Read" books={books.filter((book) => book.shelf === "read")}/>
         <div className="open-search">
           <Link to="/search">Add a book</Link>
         </div>
