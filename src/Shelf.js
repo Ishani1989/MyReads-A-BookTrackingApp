@@ -17,8 +17,9 @@ render(){
               {this.props.books.map((book)=>(
                 <li key ={book.id}>
                 <Book book = {book}
-                 
-                title = {book.title}/>
+                title = {book.title}
+                onChangeShelf={(id,shelf)=>{
+                  this.props.onChangeShelf(book.id,shelf)}}/>
                 </li>))}
               </ol>
             </div>
