@@ -1,5 +1,6 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
+import { withRouter } from 'react-router';
 import * as BooksAPI from './BooksAPI'
 import ListBooks from './ListBooks'
 import SearchBooks from './SearchBooks'
@@ -22,7 +23,6 @@ class BooksApp extends React.Component {
   changeShelf = (id,shelf) => {
     BooksAPI.update(id,shelf).then(()=>{
       this.getBooks()
-      
     })
   }
 
@@ -40,7 +40,6 @@ class BooksApp extends React.Component {
         <Route path ="/search" render ={()=>(
           <SearchBooks books = {this.state.books} onChangeShelf = {(id, shelf)=>{
             this.changeShelf(id, shelf)
-            history.push('/')
             }}/> 
           )}/>
     </div>

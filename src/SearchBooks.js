@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
+import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 import * as BooksAPI from './BooksAPI'
 import Book from './Book'
@@ -71,7 +72,9 @@ class SearchBooks extends Component{
                                         <Book book = {book}
                                         title = {book.title}
                                         onChangeShelf={(id,shelf)=>{
-                                        this.props.onChangeShelf(book.id,shelf)}}/>
+                                        this.props.onChangeShelf(book.id,shelf)
+                                        this.props.history.push('/');}
+                                        }/>
                                             <p>{book.title}</p>
                                     </li>))}
                                 </ol>):(
@@ -88,4 +91,4 @@ class SearchBooks extends Component{
 }
 
 
-export default SearchBooks
+export default withRouter(SearchBooks)
