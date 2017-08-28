@@ -22,11 +22,15 @@ class BooksApp extends React.Component {
   changeShelf = (id,shelf) => {
     BooksAPI.update(id,shelf).then(()=>{
       this.getBooks()
+      
     })
   }
 
 
   render() {
+
+    const {history} = this.props
+
     return (
       
       <div className="app">
@@ -34,7 +38,10 @@ class BooksApp extends React.Component {
           <ListBooks books = {this.state.books} onChangeShelf = {this.changeShelf}/>
         )}/>
         <Route path ="/search" render ={()=>(
-          <SearchBooks books = {this.state.books} onChangeShelf = {this.changeShelf}/> 
+          <SearchBooks books = {this.state.books} onChangeShelf = {(id, shelf)=>{
+            this.changeShelf(id, shelf)
+            history.push('/')
+            }}/> 
           )}/>
     </div>
   )

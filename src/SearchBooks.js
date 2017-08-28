@@ -11,16 +11,27 @@ class SearchBooks extends Component{
     }
 
     state = {
-        query : "",
-        books : []
+        query : ""
     }
+
+    setSearch = (arr,Arr) => {
+        return arr.map((item)=>{
+          Arr.forEach((Item)=>{
+            if(Item.id === item.id){
+              item.shelf = Item.shelf
+              return
+            }
+          })
+          return item
+        })
+      }
 
     updateQuery = (query)=>{
         this.setState({
             query : query.trim(),
             maxResults:5
         })
-        if(query){
+        if(query.length>1){
         BooksAPI.search(this.state.query, this.state.maxResults).then((books) => {
             this.setState({books: books})
         })}
