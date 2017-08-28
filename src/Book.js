@@ -26,10 +26,9 @@ class Book extends Component{
                                                 }}
                                             />
                                             ): 
-                                            (<div className='book-cover' 
+                                            (<div className='no-book' 
                                                 style={{
                                                     width: 128, height: 188, 
-                                                    backgroundImage: `url("./icons/noimage.jpg")`
                                                 }}
                                             />
                                             )
