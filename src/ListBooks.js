@@ -10,20 +10,20 @@ class ListBooks extends Component{
         return (
 
         <div className="list-books">
-        <div className="list-books-title">
-          <h1>MyReads</h1>
+          <div className="list-books-title">
+            <h1>MyReads</h1>
+          </div>
+          <Shelf title="Currently Reading" books={books.filter((book)=> book.shelf==="currentlyReading")} onChangeShelf={(id,shelf)=>{
+                    this.props.onChangeShelf(id,shelf)
+                  }}/>
+          <Shelf title="Want To Read" books={books.filter((book)=> book.shelf==="wantToRead")} onChangeShelf={(id,shelf)=>{
+                    this.props.onChangeShelf(id,shelf)}}/>
+          <Shelf title="Read" books={books.filter((book)=> book.shelf==="read")} onChangeShelf={(id,shelf)=>{
+                    this.props.onChangeShelf(id,shelf)}}/>
+          <div className="open-search">
+            <Link to="/search">Add a book</Link>
+          </div>
         </div>
-        <Shelf title="Currently Reading" books={books.filter((book)=> book.shelf==="currentlyReading")} onChangeShelf={(id,shelf)=>{
-                  this.props.onChangeShelf(id,shelf)
-                }}/>
-        <Shelf title="Want To Read" books={books.filter((book)=> book.shelf==="wantToRead")} onChangeShelf={(id,shelf)=>{
-                  this.props.onChangeShelf(id,shelf)}}/>
-        <Shelf title="Read" books={books.filter((book)=> book.shelf==="read")} onChangeShelf={(id,shelf)=>{
-                  this.props.onChangeShelf(id,shelf)}}/>
-        <div className="open-search">
-          <Link to="/search">Add a book</Link>
-        </div>
-      </div>
      )
     }
 }

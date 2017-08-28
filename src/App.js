@@ -39,7 +39,7 @@ class BooksApp extends React.Component {
             this.changeShelf(id, shelf)
             }}/> 
           )}/>
-    </div>
+      </div>
   )
 }
 }
