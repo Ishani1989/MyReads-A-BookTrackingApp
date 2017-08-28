@@ -1,21 +1,20 @@
 import React, {Component} from 'react'
-import { PropTypes } from 'prop-types'
+import PropTypes from 'prop-types'
 
 class Book extends Component{
 
-    static propTypes = {
+    static propTypes={
         image: PropTypes.string,
         title: PropTypes.string.isRequired,
-        author: PropTypes.array,
         onChangeShelf: React.PropTypes.func
     }
 
-    change = (event) => {
+    change=(event)=> {
         this.props.onChangeShelf(this.props.book.id, event.target.value);
     }
 
     render(){
-        const book = this.props.book
+        const book=this.props.book
 
         return(
             <div className="book">

@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "prop-types": "^15.5.8",
+    "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router-dom": "^4.2.2"
@@ -13,5 +13,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ishani1989/MyReads-A-BookTrackingApp.git"
+  },
+  "license": "UNLICENSED"
 }

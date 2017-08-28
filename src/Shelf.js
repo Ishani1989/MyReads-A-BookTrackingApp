@@ -5,7 +5,6 @@ import Book from './Book'
 class Shelf extends Component{
      
 render(){
-    const authors = this.props.books.authors
     return(
         <div className="list-books-content">
         <div>
@@ -15,9 +14,9 @@ render(){
 
               <ol className="books-grid">
               {this.props.books.map((book)=>(
-                <li key ={book.id}>
-                <Book book = {book}
-                title = {book.title}
+                <li key={book.id}>
+                <Book book={book}
+                title={book.title}
                 onChangeShelf={(id,shelf)=>{
                   this.props.onChangeShelf(book.id,shelf)}}/>
                 </li>))}
