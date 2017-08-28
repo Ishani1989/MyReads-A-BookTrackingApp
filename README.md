@@ -20,7 +20,7 @@ Each book has a control that lets you select the shelf for that book. When you s
 
 The search page has a text input that may be used to find books. As the value of the text input changes, the books that match that query are displayed on the page, along with a control that lets you add the book to your library.<br />
 
-###Search Screen
+### Search Screen
 
 ![alt text](https://github.com/Ishani1989/MyReads-A-BookTrackingApp/blob/master/screenshots/SearchScreen.JPG "Search Screen")
 
