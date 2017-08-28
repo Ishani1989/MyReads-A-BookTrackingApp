@@ -7,33 +7,34 @@ import Book from './Book'
 
 
 class SearchBooks extends Component{
-    static propTypes = {
+    static propTypes={
         books : PropTypes.array
     }
 
-    state = {
+    state={
         query : ""
     }
 
-    setSearch = (arr,Arr) => {
-        return arr.map((item)=>{
-          Arr.forEach((Item)=>{
-            if(Item.id === item.id){
-              item.shelf = Item.shelf
+    setSearch=(searchRes,myBooks)=> {
+        return searchRes.map((book)=>{
+          myBooks.forEach((mybook)=>{
+            if(mybook.id===book.id){
+              book.shelf=mybook.shelf
               return
             }
           })
-          return item
+          return book
         })
       }
 
-    updateQuery = (query)=>{
+    updateQuery=(query)=>{
         this.setState({
             query : query.trim(),
             maxResults:5
         })
         if(query.length>1){
-        BooksAPI.search(this.state.query, this.state.maxResults).then((books) => {
+        BooksAPI.search(this.state.query, this.state.maxResults).then((books)=> {
+            this.setSearch(books, this.props.books)
             this.setState({books: books})
         })}
         else{
@@ -41,7 +42,7 @@ class SearchBooks extends Component{
         }
     }
 
-    clearQuery =()=>{
+    clearQuery=()=>{
         this.setState({
             query : ""
         })
@@ -69,13 +70,12 @@ class SearchBooks extends Component{
                                 <ol className="books-grid">
                                 {this.state.books.map((book)=>(
                                     <li key={book.id}>
-                                        <Book book = {book}
-                                        title = {book.title}
+                                        <Book book={book}
+                                        title={book.title}
                                         onChangeShelf={(id,shelf)=>{
                                         this.props.onChangeShelf(book.id,shelf)
-                                        this.props.history.push('/');}
+                                         this.props.history.push('/');}
                                         }/>
-                                            <p>{book.title}</p>
                                     </li>))}
                                 </ol>):(
                                 <div><h4>No results to show</h4></div>
