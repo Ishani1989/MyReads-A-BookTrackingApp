@@ -1,199 +1,184 @@
-html, body, .root {
-  height: 100%;
+html,
+body,
+.root {
+    height: 100%;
 }
 body {
-  line-height: 1.5;
+    line-height: 1.5;
 }
-body, .app {
-  background: white;
-  margin-left: 150px;
-  margin-right: 150px;
+body,
+.app {
+    background: white;
+    margin-left: 150px;
+    margin-right: 150px;
 }
-
 /* main page */
 
 .list-books-title {
-  padding: 10px 0;
-  background: #0066ff;
-  text-align: center;
+    padding: 10px 0;
+    background: #0066ff;
+    text-align: center;
 }
 .list-books-title h1 {
-  font-weight: 400;
-  margin: 0;
-  color: white;
+    font-weight: 400;
+    margin: 0;
+    color: white;
 }
-
-h2{
-    margin:0;
+h2 {
+    margin: 0;
 }
-
 .list-books-content {
-  background-image: url('./icons/shelf.jpg');
-  margin: 0;
-  padding: 0;
-  flex: 1;
+    background-image: url('./icons/shelf.jpg');
+    margin: 0;
+    padding: 0;
+    flex: 1;
 }
-
 .bookshelf {
-  margin-bottom: 0px;
-  padding:0;
+    margin-bottom: 0px;
+    padding: 0;
 }
-
 @media (min-width: 600px) {
-  .bookshelf {
-    padding: 0 40px 40px;
-  }
+    .bookshelf {
+        padding: 0 40px 40px;
+    }
 }
-
 .bookshelf-title {
-  border-bottom: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
 }
 .bookshelf-books {
-  text-align: center;
+    text-align: center;
 }
-
 .open-search {
-  position: fixed;
-  right: 25px;
-  bottom: 25px;
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
 }
 .open-search a {
-  display: block;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: #0066ff;
-  background-image: url('./icons/add.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 28px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  font-size: 0;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #0066ff;
+    background-image: url('./icons/add.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 28px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    font-size: 0;
 }
-
 /* search page */
 
 .search-books-bar {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 5;
-  display: flex;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 0 6px rgba(0,0,0,0.23);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    display: flex;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 0 6px rgba(0, 0, 0, 0.23);
 }
 .search-books-input-wrapper {
-  flex: 1;
-  background: #e9e;
+    flex: 1;
+    background: #e9e;
 }
 .search-books-bar input {
-  width: 100%;
-  padding: 15px 10px;
-  font-size: 1.25em;
-  border: none;
-  outline: none;
+    width: 100%;
+    padding: 15px 10px;
+    font-size: 1.25em;
+    border: none;
+    outline: none;
 }
-
 .close-search {
-  display: block;
-  top: 20px;
-  left: 15px;
-  width: 50px;
-  height: 53px;
-  background: white;
-  background-image: url('./icons/arrow-back.svg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 28px;
-  font-size: 0;
+    display: block;
+    top: 20px;
+    left: 15px;
+    width: 50px;
+    height: 53px;
+    background: white;
+    background-image: url('./icons/arrow-back.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 28px;
+    font-size: 0;
 }
-
 .search-books-results {
-  padding: 80px 10px 20px;
-  border-style:ridge;
-  background: -webkit-linear-gradient(left, #e6f7ff , white);
+    padding: 80px 10px 20px;
+    border-style: ridge;
+    background: -webkit-linear-gradient(left, #e6f7ff, white);
 }
-
 /* books grid */
 
 .books-grid {
-  list-style-type: none;
-  margin: 0;
-
-  display: flex;
-  justify-content: left;
-  flex-wrap: wrap;
+    list-style-type: none;
+    margin: 0;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
 }
 .books-grid li {
-  padding: 10px 15px;
-  text-align: left;
-  border-style: ridge;
-  border-color: #0066ff;
-  background: #ffebcc;
-  margin:5px;  
-  margin-top:75px;
-  margin-bottom: 100px;
+    padding: 10px 15px;
+    text-align: left;
+    border-style: ridge;
+    border-color: #0066ff;
+    background: #ffebcc;
+    margin: 5px;
+    margin-top: 75px;
+    margin-bottom: 100px;
 }
-
 .book {
-  width: 140px;
+    width: 140px;
 }
 .book-title,
 .book-authors {
-  font-size: 1em;
+    font-size: 1em;
 }
 .book-title {
-  margin-top: 0;
+    margin-top: 0;
 }
 .book-authors {
-  color: #999;
+    color: #999;
 }
-
 .book-top {
-  position: relative;
-  height: 200px;
-  display: flex;
-  align-items: flex-end;
+    position: relative;
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
 }
-
 .book-shelf-changer {
-  position: absolute;
-  right: 0;
-  bottom: -10px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #0066ff;
-  background-image: url('./icons/arrow-drop-down.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 20px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    position: absolute;
+    right: 0;
+    bottom: -10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #0066ff;
+    background-image: url('./icons/arrow-drop-down.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 .book-shelf-changer select {
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  cursor: pointer;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
 }
-
 /* book cover */
 
 .no-book {
-  background-image: url('./icons/noimage.jpg');
-  border-style: groove;
-  border-color: #0066ff;
+    background-image: url('./icons/noimage.jpg');
+    border-style: groove;
+    border-color: #0066ff;
 }
-
 .book-cover {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  background: #99c2ff;
-  border-style: groove;
-  border-color: #0066ff;
-
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    background: #99c2ff;
+    border-style: groove;
+    border-color: #0066ff;
 }
 .book-cover-title {
-  padding: 20px 10px 0;
-  text-align: center;
-  font-size: 2em;
+    padding: 20px 10px 0;
+    text-align: center;
+    font-size: 2em;
 }
