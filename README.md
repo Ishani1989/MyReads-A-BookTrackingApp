@@ -92,7 +92,7 @@ npm version 3.10.10
 
 ## Tested Env
 
-Tested in Chrome version 57.0.2987.133
+Tested in Chrome version 57.0.2987.133 at zoom level : 80%
 
 ## History
 
