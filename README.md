@@ -8,18 +8,21 @@ In the MyReads project, you'll create a bookshelf app that allows you to select 
 
 In this application, the main page displays a list of "shelves" (i.e. categories), each of which contains a number of books. The three shelves are:
 
-Currently Reading
-Want to Read
-Read
+Currently Reading<br />
+Want to Read<br />
+Read<br />
 
-![alt text](https://github.com/Ishani1989/CuisineWise/blob/master/static/screenshots/DishDescriptionPage.JPG "Dish Description")
+![alt text](https://github.com/Ishani1989/MyReads-A-BookTrackingApp/blob/master/screenshots/HomeScreen.JPG "Bookshelf Screen")
 
-Each book has a control that lets you select the shelf for that book. When you select a different shelf, the book moves there.The main page also has a link to /search, a search page that allows you to find books to add to your library.
 
-The search page has a text input that may be used to find books. As the value of the text input changes, the books that match that query are displayed on the page, along with a control that lets you add the book to your library.
+Each book has a control that lets you select the shelf for that book. When you select a different shelf, the book moves there.The main page also has a link to /search, a search page that allows you to find books to add to your library.<br /><br />
+
+The search page has a text input that may be used to find books. As the value of the text input changes, the books that match that query are displayed on the page, along with a control that lets you add the book to your library.<br />
+
+![alt text](https://github.com/Ishani1989/MyReads-A-BookTrackingApp/blob/master/screenshots/SearchScreen.JPG "Search Screen")
 
 ## Files Information
-
+```
 +--public/    
  |-- index.html
  |-- favicon.ico - React Icon.
@@ -72,14 +75,28 @@ The search page has a text input that may be used to find books. As the value of
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-## Prerequisites :
+## Dependency :
 
-npm
+npm version 3.10.10
 
 ## To Run the App:
 
-1. Clone/download the repo.
-2. Open a terminal in project directory
-3. Run `npm install` to install the required dependencies
-4. Run command `npm start` to run the local server.
-5. App opens up on its own at `localhost:3000`
+* Clone/download the repo.
+* Open a terminal in project directory
+* Run `npm install` to install the required dependencies
+* Run the command `npm start` to start the local server.
+* App opens up on its own at port `localhost:3000`
+
+## Tested Env
+
+Tested in Chrome version 57.0.2987.133
+
+## History
+
+First checkin done on Aug 20, 2017
+
+## Credits
+
+ishanibhattacharjee@gmail.com<br />
+https://stackoverflow.com<br />
+https://reacttraining.com/<br />
