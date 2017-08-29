@@ -53,16 +53,17 @@ class SearchBooks extends Component{
         const newBooks = this.state.books
         this.props.onChangeShelf(id, shelf)
         newBooks.map((book)=>{
-              if(shelf==="none"){
-                book.present="false"
+              if(id===book.id){
+                  if(shelf==="none"){
+                      book.present="false"
+                  }
+                  else{
+                      book.present="true"
+                  }
+                  book.shelf=shelf
               }
-              else{
-                  book.present="true"
-              }
-              return
-            })
             this.setState({books:newBooks})
-    }
+    })}
 
     render() {
         const {query}=this.state.query
