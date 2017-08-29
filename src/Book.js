@@ -19,6 +19,8 @@ class Book extends Component{
         return(
             <div className="book">
                 <div className="book-top">
+                    {this.props.search?(<div className="selected"/>):("")}
+                    
                     {'imageLinks' in book ? (<div className='book-cover' 
                                                 style={{
                                                     width: 128, height: 188, 
@@ -41,6 +43,7 @@ class Book extends Component{
                     </div>
                 </div>
                 <div className="book-title">{this.props.title}</div>
+                <div className="book-authors">{ book.authors ? book.authors.join(', '): ''}</div>
             </div>
         )
     }

@@ -21,6 +21,7 @@ class SearchBooks extends Component{
           myBooks.forEach((mybook)=>{
             if(mybook.id===book.id){
               book.shelf=mybook.shelf
+              book.present="true"
               return
             }
           })
@@ -45,8 +46,12 @@ class SearchBooks extends Component{
 
     clearQuery=()=>{
         this.setState({
-            query : ""
+            query : "",
         })
+    }
+
+    change=(id, shelf)=> {
+        this.props.onChangeShelf(id, shelf)
     }
 
     render() {
@@ -73,10 +78,11 @@ class SearchBooks extends Component{
                                     <li key={book.id}>
                                         <Book book={book}
                                         title={book.title}
+                                        search={book.present}
                                         onChangeShelf={(id,shelf)=>{
-                                        this.props.onChangeShelf(book.id,shelf)
-                                         this.props.history.push('/');}
-                                        }/>
+                                        this.change(book.id,shelf, {book})
+                                        }}
+                                        />
                                     </li>))}
                                 </ol>):(
                                 <div><h4>No results to show</h4></div>
@@ -92,4 +98,4 @@ class SearchBooks extends Component{
 }
 
 
-export default withRouter(SearchBooks)
+export default SearchBooks
