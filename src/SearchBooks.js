@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 import * as BooksAPI from './BooksAPI'
 import Book from './Book'
@@ -52,6 +51,7 @@ class SearchBooks extends Component{
 
     change=(id, shelf)=> {
         this.props.onChangeShelf(id, shelf)
+        this.setSearch(this.state.books, this.props.books)
     }
 
     render() {
