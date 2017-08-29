@@ -45,13 +45,23 @@ class SearchBooks extends Component{
 
     clearQuery=()=>{
         this.setState({
-            query : "",
+            query : ""
         })
     }
 
     change=(id, shelf)=> {
+        const newBooks = this.state.books
         this.props.onChangeShelf(id, shelf)
-        this.setSearch(this.state.books, this.props.books)
+        newBooks.map((book)=>{
+              if(shelf==="none"){
+                book.present="false"
+              }
+              else{
+                  book.present="true"
+              }
+              return
+            })
+            this.setState({books:newBooks})
     }
 
     render() {
@@ -78,9 +88,8 @@ class SearchBooks extends Component{
                                     <li key={book.id}>
                                         <Book book={book}
                                         title={book.title}
-                                        search={book.present}
                                         onChangeShelf={(id,shelf)=>{
-                                        this.change(book.id,shelf, {book})
+                                        this.change(book.id,shelf)
                                         }}
                                         />
                                     </li>))}

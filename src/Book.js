@@ -19,7 +19,7 @@ class Book extends Component{
         return(
             <div className="book">
                 <div className="book-top">
-                    {this.props.search?(<div className="selected"/>):("")}
+                    {this.props.book.present?(<div className="selected"/>):("")}
                     
                     {'imageLinks' in book ? (<div className='book-cover' 
                                                 style={{
