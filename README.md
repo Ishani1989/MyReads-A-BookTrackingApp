@@ -56,7 +56,7 @@ The search page has a text input that may be used to find books. As the value of
 
 ## Backend Server
 
- The provided file [`BooksAPI.js`](src/BooksAPI.js) contains the methods  to perform necessary operations on the backend:
+ The provided file [`BooksAPI.js`](src/BooksAPI.js) contains the methods  to perform necessary operations on the backend :
 
 ### `getAll()`
 * Returns a Promise which resolves to a JSON object containing a collection of book objects.
